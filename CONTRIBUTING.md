@@ -57,6 +57,34 @@ reviews and merges, including changes from forks. For anything larger than a
 small fix, open an issue first so the approach can be agreed before you spend
 time on it.
 
+## Pull requests
+
+Every CI check must pass before a pull request can be merged. The
+`PR rules` check enforces these:
+
+- **Issue first.** Open an issue and wait until a maintainer labels it
+  `accepted`, then write `Closes #N` in the pull request.
+- **Tests.** Every change to the Dart, Kotlin or Swift sources of either
+  package (or their examples) needs a test change: the package's `test/`,
+  `packages/wherefrom/android/src/test/`, or the example's tests. A bug fix
+  needs a test that fails without the fix.
+- **Small.** At most 400 changed lines (lock files not counted), one issue
+  per pull request.
+- **No suppressions.** No `// ignore:`, `@Suppress(`, `swiftlint:disable` or
+  `# shellcheck disable`, no changes to any `analysis_options.yaml` or
+  `.shellcheckrc`. Fix the finding.
+- **At most 2 open pull requests** per person.
+
+If a rule really does not fit your change, say why in the description. A
+maintainer can waive it with a label (`no-tests-needed`, `large-change` or
+`suppression-ok`).
+
+## Legal notice
+
+By submitting a contribution you confirm that you wrote it, that you have the
+right to submit it, and that it may be distributed under the project license
+(see [LICENSE](LICENSE)).
+
 ## Ground rules
 
 - **No Kotlin Gradle Plugin.** The Android plugin uses AGP built-in Kotlin;
@@ -82,7 +110,11 @@ Using AI tools is fine; please just be open about it.
   It shows us what you understood about the change. Please don't paste
   generated text.
 - Read, run and test every line you submit, and be ready to explain it in
-  review.
+  review. If you don't understand what a line does, don't submit it.
+- Keep the change focused. Agents like to add unrelated "improvements",
+  long comments and dead code; remove them before you open the pull request.
+- Pull requests that are raw, unreviewed agent output will be closed.
+- If you use an agent, point it at [AGENTS.md](AGENTS.md).
 - If the disclosure is missing, a check adds a reminder to the PR. It does
   not fail the PR, but a maintainer will ask about it before merging.
 
