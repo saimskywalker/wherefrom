@@ -53,9 +53,9 @@ To see a real referrer on a device, follow
 ## How changes land
 
 Every change reaches `main` through a pull request that the maintainer
-reviews and merges, including changes from forks. For anything larger than a
-small fix, open an issue first so the approach can be agreed before you spend
-time on it.
+reviews and merges, including changes from forks. Every pull request, small
+fixes included, needs an issue that a maintainer has labelled `accepted`
+first, so the approach can be agreed before you spend time on it.
 
 ## Pull requests
 
